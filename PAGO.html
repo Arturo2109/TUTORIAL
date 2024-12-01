@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Método de Pago</h1>
+        <p>Total a pagar: $<span id="total"></span></p>
+        <form onsubmit="processPayment(event)">
+            <label for="card-number">Número de Tarjeta</label>
+            <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+            
+            <label for="expiry-date">Fecha de Vencimiento</label>
+            <input type="month" id="expiry-date" required>
+            
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" required>
+            
+            <button type="submit" class="btn">Pagar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('total').textContent = localStorage.getItem('total') || '0.00';
+
+        function processPayment(event) {
+            event.preventDefault();
+            alert('Pago procesado correctamente. ¡Gracias por tu compra!');
+            localStorage.removeItem('total');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

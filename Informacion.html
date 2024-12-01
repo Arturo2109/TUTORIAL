@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial de la App GORRAS JJ</title>
+    <link rel="stylesheet" href="ESTILO.css">
+    <style>
+        /* Estilos básicos del carrusel */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Centrado del contenido y los botones */
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .intro, .steps, .benefits, footer {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        /* Resalta la imagen activa */
+        .carousel-item.active {
+            opacity: 1;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tutorial para Usar la App GORRAR JJ</h1>
+        <p>Descubre cómo comprar la gorra perfecta en pocos pasos.</p>
+    </header>
+
+    <!-- Carrusel de Imágenes -->
+    <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <div class="carousel-item active">
+                <img src="IMG1.jpg" alt="GORRA 1">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG2.jpg" alt="GORRA 2">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG3.jpg" alt="GORRA 3">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG4.jpg" alt="GORRA 4">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG5.jpg" alt="GORRA 5">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG6.jpg" alt="GORRA 6">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG7.jpg" alt="GORRA 7">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG8.jpg" alt="GORRA 8">
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="button-container">
+        <a href="NAVEGACION.html"><button>TUTORIAL DE NAVEGACION</button></a>
+        <a href="REGISTRO.html"><button>TUTORIAL DE REGISTRO</button></a>
+        <a href="PRODUCTOS EN TIENDA.html"><button>TUTORIAL DE PRODUCTOS</button></a>
+        <a href="CARRITO DE COMPRAS.html"><button>TUTORIAL DE CARRITO DE COMPRAS</button></a>
+        <a href="FACTURA.html"><button>TUTORIAL DE FACTURA</button></a>
+        <a href="PAGO.html"><button>TUTORIAL DE PAGO</button></a>
+        <a href="ENVIO.html"><button>TUTORIAL DE ENVIOS</button></a>
+        <a href="DATOS EMPRESA.html"><button>TUTORIAL DE DATOS DE EMPRESA</button></a>
+        <a href="REDES.html"><button>TUTORIAL DE REDES SOCIALES</button></a>
+        <a href="PROMOCIONES.html"><button>TUTORIAL DE PROMOCIONES</button></a>
+        <a href="DUDAS.html"><button>TUTORIAL DE DUDAS Y ACLARACIONES</button></a>
+    </div>
+
+    <!-- Sección de Introducción -->
+    <section class="intro">
+        <h2>¿Por qué usar nuestra App?</h2>
+        <p>Encuentra la mayor variedad de gorras, aprovecha descuentos exclusivos y compra de manera rápida y segura.</p>
+    </section>
+
+    <!-- Pasos del Tutorial -->
+    <section class="steps">
+        <h2>Pasos para Usar la App</h2>
+        <ol>
+            <li><strong>Descargar la App:</strong> Disponible en Google Play y App Store.</li>
+            <li><strong>Registrarse o Iniciar Sesión:</strong> Crea tu cuenta o usa tus redes sociales para iniciar sesión.</li>
+            <li><strong>Explorar la Tienda:</strong> Navega entre las categorías y estilos de gorras.</li>
+            <li><strong>Seleccionar tu Gorra Favorita:</strong> Revisa los detalles y elige tu talla.</li>
+            <li><strong>Agregar al Carrito:</strong> Agrega la gorra seleccionada al carrito de compras.</li>
+            <li><strong>Finalizar la Compra:</strong> Revisa tu pedido, ingresa la dirección y selecciona el método de pago.</li>
+        </ol>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits">
+        <h2>Beneficios de Comprar con Nosotros</h2>
+        <ul>
+            <li>Envío gratuito en pedidos mayores a $50.</li>
+            <li>Devoluciones fáciles y sin costo adicional.</li>
+            <li>Descuentos exclusivos para miembros.</li>
+            <li>Soporte 24/7 en línea para ayudarte en cualquier paso.</li>
+        </ul>
+    </section>
+    <a href="POLITICA.html"><button>POLITICA DE PRIVACIDAD Y CANCELACION</button></a>
+
+    <footer>
+        <p>© 2024 App de Venta de Gorras. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript para hacer el carrusel automático
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function showNextImage() {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalItems;
+            items[currentIndex].classList.add('active');
+            document.getElementById('carouselInner').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Intervalo para cambiar de imagen cada 3 segundos
+        setInterval(showNextImage, 3000);
+    </script>
+
+</body>
+</html>

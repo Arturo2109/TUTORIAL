@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('IMG3.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .login-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .login-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000080;
+            color: #fff;
+            border: none;
+            border-radius: 50px; /* Cambiar a ovalado */
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background-color: #008080;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1><em>INICIO DE SESIÓN GORRASJJ</em></h1>
+            <div id="error-message" class="error-message" style="display: none;"><em>Usuario o contraseña incorrectos.</em></div>
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button onclick="validateLogin()"><em>Iniciar Sesión</em></button>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            // Usuario y contraseña correctos
+            const correctUsername = "gorrasjj";
+            const correctPassword = "ianyandel";
+
+            // Obtener valores ingresados
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Validar credenciales
+            if (username === correctUsername && password === correctPassword) {
+                window.location.href = "PROTOTIPO.html"; // Redirige al archivo destino
+            } else {
+                // Mostrar mensaje de error
+                const errorMessage = document.getElementById("error-message");
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
